@@ -44,15 +44,15 @@ pipeline {
         }
     }
 
-    post {
+    /* post {
         always {
             echo '========== Pipeline finished =========='
         }
 
         success {
             echo '========== Build successful =========='
-            // Archives the test results
-            junit 'target/surefire-reports/**/*.xml'
+            Archives the test results
+            junit 'target/surefire-reports//*.xml'
             
             // Archives the code coverage report
             publishHTML([
@@ -60,7 +60,7 @@ pipeline {
                 reportFiles: 'index.html',
                 reportName: 'JaCoCo Code Coverage Report'
             ])
-        }
+        } */
 
         failure {
             echo '========== Build failed =========='
