@@ -20,7 +20,7 @@ services:
     #IMPORTANT docker build -t yourname/sum-product-fx .
     # docker push yourname/sum-product-fx: last
     # then you can change the image in the following statment
-    image: amirdirin/sum-product_fx:latest
+    image: mkiavash/sum-product-fx:latest
     container_name: calculator-app
     depends_on:
       - db
@@ -31,7 +31,7 @@ services:
       DB_USER: root
       # make sure your DB_PASSWORD is correct mine is root
       DB_PASSWORD: kia101188251388!
-      DISPLAY: host.docker.internal:0
+        - DISPLAY=host.docker.internal:0
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
 #    network_mode: bridge # it cancels network of docker -> docker cannot find host db.
